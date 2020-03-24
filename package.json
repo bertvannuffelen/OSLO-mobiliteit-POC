@@ -1,0 +1,26 @@
+{
+  "name": "specificationgenerator-js",
+  "version": "1.0.0",
+  "description": "renders jinja2 based templates for OSLO",
+  "main": "app/clj.js",
+  "dependencies": {
+    "connect": "^3.6.6",
+    "express": "^4.16.4",
+    "jsonld": "^1.1.0",
+    "jsonfile": "^5.0.0",
+    "nunjucks": "^3.1.3",
+    "serve-static": "^1.13.2",
+    "commander": "^2.19.0",
+    "collections": "^5.1.6",
+    "camelcase": "^5.3.1",
+    "papaparse": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app/cls.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Langens <jonathan.langens@tenforce.com>",
+  "repository": "/specgenerator-js",
+  "license": "Apache-2.0"
+}
