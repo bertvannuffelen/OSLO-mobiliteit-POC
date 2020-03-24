@@ -1,0 +1,106 @@
+{
+  "@context": {
+    "wegsegment": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+    "aantalRijstroken": "https://data.vlaanderen.be/ns/weg#aantalRijstroken",
+    "alternatieveStraatnaam": {
+      "@id": "https://data.vlaanderen.be/ns/weg#alternatieveStraatnaam",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "beginknoop": { "@id" : "https://data.vlaanderen.be/ns/weg#beginknoop",
+       "@type" : "@id"
+       },
+    "behoortTot": "https://data.vlaanderen.be/ns/weg#behoortTot",
+    "behoortTotGenummerdeWegOpPositie": "https://data.vlaanderen.be/ns/weg#behoortTotSetOpPositie",
+    "eindknoop": { "@id" : "https://data.vlaanderen.be/ns/weg#eindknoop",
+     "@type" : "@id"
+       },
+    "heeftRijrichting": { "@id" : "https://data.vlaanderen.be/ns/weg#heeftRijrichting",
+    "@type" : "@id"
+       },
+    "heeftSnelheidsbeperking": "https://data.vlaanderen.be/ns/weg#heeftSnelheidsbeperking",
+    "heeftVoertuigbeperking": "https://data.vlaanderen.be/ns/weg#heeftVoertuigbeperking",
+    "linkergemeentenaam": { "@id" :"https://data.vlaanderen.be/ns/weg#linkergemeentenaam",
+    "@type" : "@id"
+       },
+    "linkerstraatnaam": { "@id" :"https://data.vlaanderen.be/ns/weg#linkerstraatnaam",
+    "@type" : "@id"
+       },
+    "linkerwegbeheerder": { "@id" :"https://data.vlaanderen.be/ns/weg#linkerwegbeheerder",
+    "@type" : "@id"
+       },
+    "methodeWegsegmentgeometrie": { "@id" :"https://data.vlaanderen.be/ns/weg#methodeWegsegmentgeometrie",
+    "@type" : "@id"
+       },
+    "middelijnGeometrie": { "@id" :"https://data.vlaanderen.be/ns/weg#middellijnGeometrie",
+    "@type" : "@id"
+       },
+    "morfologischeWegklasse": { "@id" :"https://data.vlaanderen.be/ns/weg#morfologischeWegklasse",
+    "@type" : "@id"
+       },
+    "rechtergemeentenaam": { "@id" :"https://data.vlaanderen.be/ns/weg#rechtergemeentenaam",
+    "@type" : "@id"
+       },
+    "rechterstraatnaam": { "@id" :"https://data.vlaanderen.be/ns/weg#rechterstraatnaam",
+    "@type" : "@id"
+       },
+    "rechterwegbeheerder": { "@id" :"https://data.vlaanderen.be/ns/weg#rechterwegbeheerder",
+    "@type" : "@id"
+       },
+    "toegangsbeperking": { "@id" :"https://data.vlaanderen.be/ns/weg#toegangsbeperking",
+    "@type" : "@id"
+       },
+    "wegbreedte": {
+        "@id": "https://data.vlaanderen.be/ns/weg#wegbreedte"
+      },
+    "wegcategorie": { "@id" :"https://data.vlaanderen.be/ns/weg#wegcategorie",
+    "@type" : "@id"
+       },
+    "wegsegmentstatus": { "@id" :"https://data.vlaanderen.be/ns/weg#wegsegmentstatus",
+    "@type" : "@id"
+       },
+    "wegverharding": { "@id" :"https://data.vlaanderen.be/ns/weg#wegverharding",
+    "@type" : "@id"
+       },
+    "straatnaam" : "http://www.w3.org/2000/01/rdf-schema#label",
+    "wkt":"http://www.opengis.net/ont/geosparql#asWKT"
+  },
+  "@type": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+  "@id": "https://data.vlaanderen.be/id/wegsegment/{{WS_OIDN}}",
+  "aantalRijstroken": "{{NIET}}", 
+  "alternatieveStraatnaam": "{{NIET}}",
+  "beginknoop": "https://data.vlaanderen.be/id/wegknoop/{{B_WK_OIDN}}",
+  "behoortTot": "{{NIET}}",
+  "behoortTotGenummerdeWegOpPositie": "{{NIET}}",
+  "eindknoop": "https://data.vlaanderen.be/id/wegknoop/{{E_WK_OIDN}}",
+  "heeftRijrichting": "https://data.vlaanderen.be/id/concept/rijrichting/{{RICHTING}}",
+  "heeftSnelheidsbeperking": "{{NIET}}}",
+  "heeftVoertuigbeperking": "{{NIET}}",
+  "linkergemeentenaam": "{{NIET}}",
+  "linkerstraatnaam": {
+      "@id": "https://data.vlaanderen.be/id/straatnaam/{{LSTRNMID}}",
+	  "straatnaam" : "{{LSTRNM}}"
+	  },
+  "linkerwegbeheerder": {
+       "@id": "https://basisregisters.vlaanderen.be/api/v1/wegenregisterbeheerder/{{BEHEER}}",
+	   "@type": "http://www.w3.org/ns/org#Organization"
+	   },
+  "methodeWegsegmentgeometrie": "https://data.vlaanderen.be/id/concept/wegsegmentgeometrie/{{METHODE}}",
+  "middelijnGeometrie": {
+      "wkt": "{{WKT}}"
+	  },
+  "morfologischeWegklasse": "https://data.vlaanderen.be/id/concept/morfologischeWegklasse/{{MORF}}",
+  "rechtergemeentenaam": "{{NIET}}",
+  "rechterstraatnaam": {
+     "@id": "https://data.vlaanderen.be/id/straatnaam/{{RSTRNMID}}",
+	 "straatnaam" : "{{RSTRNM}}"
+	  },
+  "rechterwegbeheerder": {
+       "@id": "https://basisregisters.vlaanderen.be/api/v1/wegenregisterbeheerder/{{BEHEER}}",
+	   "@type": "http://www.w3.org/ns/org#Organization"
+	   },
+  "toegangsbeperking": "https://data.vlaanderen.be/id/concept/toegangsbeperking/{{TGBEP}}",
+  "wegbreedte": "{{NIET}}",
+  "wegcategorie": "https://data.vlaanderen.be/id/concept/wegcategorie/{{WEGCAT}}",
+  "wegsegmentstatus": "https://data.vlaanderen.be/id/concept/wegsegmentstatus/{{STATUS}}",
+  "wegverharding": "{{NIET}}"
+}
