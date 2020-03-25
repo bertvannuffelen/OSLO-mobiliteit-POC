@@ -1,6 +1,7 @@
 const fs = require("fs");
 const jsonfile = require('jsonfile');
 const jsonld = require('jsonld');
+const jp = require('jsonpath');
 const camelCase = require('camelcase');
 const papaparse = require('papaparse');
 
@@ -9,25 +10,26 @@ var program = require('commander');
  
 program
   .version('0.8.0')
-  .usage('node csv-renderer.js renders the content of a CSV file into a jsonld template')
+  .usage('node json-renderer.js renders the content of a json file into a jsonld template')
   .option('-t, --template <template>', 'jsonld template to render')
   .option('-h, --contextbase <hostname>', 'the public base url on which the context of the jsons are published.')
   .option('-r, --documentpath <path>', 'the document path on which the jsons are is published')
   .option('-x, --debug <path>', 'dump the intermediate json which will be used by the templaterenderer')
+  .option('-l, --list <list>', 'the list on which the data must iterate')
   .option('-i, --input <path>', 'input file (a csv file)')
   .option('-o, --output <path>', 'output file (a json file)')
 
 program.on('--help', function(){
   console.log('')
   console.log('Examples:');
-  console.log('  $ csv-renderer --help');
-  console.log('  $ csv-renderer -i <input> -o <output>');
+  console.log('  $ json-renderer --help');
+  console.log('  $ json-renderer -t <template> -i <input> -o <output>');
 });
 
 program.parse(process.argv);
 
 var output = program.output || 'output.json';
-var csvoptions = {
+var jsonoptions = {
 	header: true,
 	skipEmptyLines: true,
 	complete: function(results) {
@@ -36,20 +38,20 @@ var csvoptions = {
 	}
 
 
-render_csv(program.template, program.input, output);
+render_json(program.template, program.input, output);
 console.log('done');
 
 
 
-function render_csv(templatefile, csvfilename, output) {
+function render_json(templatefile, jsonfilename, output) {
   console.log('start reading');
   var template = fs.readFileSync(templatefile, 'utf-8');
-  var csvf = fs.readFileSync(csvfilename, 'utf-8');
-  var csv = papaparse.parse(csvf, csvoptions);
+  var jsonf = fs.readFileSync(jsonfilename, 'utf-8');
+  var json = JSON.parse(jsonf, jsonoptions);
 
   var pt = parse_template(template);
 //  var ren = render_template(pt, {'ID':'een identifier', 'STRING' : 'een string waarde', 'BOOLEAN': 'true', 'VAL' : 'I do not know'});
-  var ren = render_template(pt, csv.data);
+  var ren = render_template(pt, json);
 //  console.log(ren);
 
 /*
@@ -97,8 +99,9 @@ function parse_template(file) {
 	return parsed_template
 }
 
-function render_template(parsed_template, data){
+function render_template(parsed_template, json){
 	var renderedData = [];
+        var data = jp.query(json,program.list);
 	for (i in data) {
 	  renderedData[i] = render_template_single(parsed_template,data[i]);
 	}
