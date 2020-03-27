@@ -135,34 +135,3 @@ function write_data(stream, data){
 	return true;
 };
 
-/*
-const { Transform } = require('stream');
-
-const transformRow2Json = new Transform({
-  transform(chunk, encoding, callback) {
-    process.stdout.write('.');
-    callback(null, chunk);
-  }
-});
-*/
-
-function streamcsv(template, input, output) {
-
-   var out = Papa.parse(input, {
-	header: true,
-	skipEmptyLines: true,
-	step: function(row) {
-		console.log("Row:", row.data);
-		console.log(render_template_single(template, data));
-		console.log("--------");
-                
-	},
-	complete: function() {
-		console.log("All done!");
-	}
-});
-   console.log(out);
-
-}
-
-
