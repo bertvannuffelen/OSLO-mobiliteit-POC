@@ -115,7 +115,11 @@ function render_template_single(parsed_template, data){
 	  if (reminder == 0) {
 		render = render + parsed_template.pt_full[i];
 	  } else {
-		render = render + data[parsed_template.pt_full[i]];
+	console.log(parsed_template.pt_full[i]);
+               let value = jp.query(data, parsed_template.pt_full[i]);
+        console.log(value);
+               render = render + value;
+			
 	  }
 	}
 	return render;

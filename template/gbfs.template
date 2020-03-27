@@ -1,0 +1,50 @@
+{
+  "@context": [
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/20200112/context/mobiliteit-trips-en-aanbod-ap.jsonld",
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/zonderstatus/2018-10-04/context/generiek-basis.jsonld",
+     {
+       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
+    }
+   ],
+
+
+  "@type": "https://data.vlaanderen.be/ns/weg#Wegsegment",
+  "@id": "https://data.vlaanderen.be/id/wegsegment/{{WS_OIDN}}",
+  "aantalRijstroken": "{{NIET}}", 
+  "alternatieveStraatnaam": "{{NIET}}",
+  "beginknoop": "https://data.vlaanderen.be/id/wegknoop/{{B_WK_OIDN}}",
+  "behoortTot": "{{NIET}}",
+  "behoortTotGenummerdeWegOpPositie": "{{NIET}}",
+  "eindknoop": "https://data.vlaanderen.be/id/wegknoop/{{E_WK_OIDN}}",
+  "heeftRijrichting": "https://data.vlaanderen.be/id/concept/rijrichting/{{RICHTING}}",
+  "heeftSnelheidsbeperking": "{{NIET}}}",
+  "heeftVoertuigbeperking": "{{NIET}}",
+  "linkergemeentenaam": "{{NIET}}",
+  "linkerstraatnaam": {
+      "@id": "https://data.vlaanderen.be/id/straatnaam/{{LSTRNMID}}",
+	  "straatnaam" : "{{LSTRNM}}"
+	  },
+  "linkerwegbeheerder": {
+       "@id": "https://basisregisters.vlaanderen.be/api/v1/wegenregisterbeheerder/{{BEHEER}}",
+	   "@type": "http://www.w3.org/ns/org#Organization"
+	   },
+  "methodeWegsegmentgeometrie": "https://data.vlaanderen.be/id/concept/wegsegmentgeometrie/{{METHODE}}",
+  "middelijnGeometrie": {
+      "wkt": "{{WKT}}"
+	  },
+  "morfologischeWegklasse": "https://data.vlaanderen.be/id/concept/morfologischeWegklasse/{{MORF}}",
+  "rechtergemeentenaam": "{{NIET}}",
+  "rechterstraatnaam": {
+     "@id": "https://data.vlaanderen.be/id/straatnaam/{{RSTRNMID}}",
+	 "straatnaam" : "{{RSTRNM}}"
+	  },
+  "rechterwegbeheerder": {
+       "@id": "https://basisregisters.vlaanderen.be/api/v1/wegenregisterbeheerder/{{BEHEER}}",
+	   "@type": "http://www.w3.org/ns/org#Organization"
+	   },
+  "toegangsbeperking": "https://data.vlaanderen.be/id/concept/toegangsbeperking/{{TGBEP}}",
+  "wegbreedte": "{{NIET}}",
+  "wegcategorie": "https://data.vlaanderen.be/id/concept/wegcategorie/{{WEGCAT}}",
+  "wegsegmentstatus": "https://data.vlaanderen.be/id/concept/wegsegmentstatus/{{STATUS}}",
+  "wegverharding": "{{NIET}}"
+}
