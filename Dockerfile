@@ -3,7 +3,7 @@ FROM circleci/node:10
 #RUN useradd -m circleci
 USER circleci
 
-RUN sudo apt-get install vim
+RUN sudo apt-get install vim emacs
 
 WORKDIR /app
 ADD . /app
