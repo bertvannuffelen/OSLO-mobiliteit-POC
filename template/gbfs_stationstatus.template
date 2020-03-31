@@ -16,7 +16,6 @@
      
    ],
 
-
   "@type": "Transportknoop",
   "@id": "https://gbfs.provider/id/station/{{station_id}}",
   "identificator": {

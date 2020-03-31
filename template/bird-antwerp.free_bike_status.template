@@ -1,0 +1,28 @@
+{
+  "@context": [
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/20200112/context/mobiliteit-trips-en-aanbod-ap.jsonld",
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/zonderstatus/2018-10-04/context/generiek-basis.jsonld",
+     {
+       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
+    },
+     { "is_disabled": "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_disabled",
+       "is_reserved" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_reserved",
+       "lat" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#lat",
+       "lon" :  "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#lon",
+     }
+     
+   ],
+
+  "@type": "Fietsen",
+  "@id": "https://gbfs.provider/id/fiets/{{bike_id}}",
+  "identificator": {
+    "Identificator.identificator" : "{{bike_id}}"
+  }, 
+   "fiets":  {
+	"is_disabled" :  "{{is_disabled}}",
+	"is_reserved" : "{{is_reserved}}",
+        "lat" : "{{lat}}",
+        "lon" : "{{lon}}"
+   }
+
+}
