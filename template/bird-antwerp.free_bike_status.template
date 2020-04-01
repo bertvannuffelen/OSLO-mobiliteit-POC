@@ -5,24 +5,24 @@
      {
        "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.vervoermiddel"
     },
-     { "is_disabled": "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_disabled",
-       "is_reserved" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#free_bike_status",
-       "lat" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#lat",
-       "lon" :  "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#lon",
+     { "is_disabled": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
+       "is_reserved" : "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
+       "lat" : "https://dublincore.org/specifications/dublin-core/dcmi-terms/#spatial",
+       "lon" :  "https://dublincore.org/specifications/dublin-core/dcmi-terms/#spatial",
      }
      
    ],
 
-  "@type": "Vervoermiddel.fiets",
-  "@id": "https://gbfs.provider/id/fiets/{{bike_id}}",
+  "@type": "Resource",
+  "@id": "https://gbfs.provider/id/resource/{{bike_id}}",
   "identificator": {
     "Identificator.identificator" : "{{bike_id}}"
   }, 
-   "Free_bike_status":  {
-	"is_disabled" :  "{{is_disabled}}",
+   "Vervoermiddel.fiets":  {
 	"is_reserved" : "{{is_reserved}}",
-        "lat" : "{{lat}}",
-        "lon" : "{{lon}}"
+	"is_disabled" :  "{{is_disabled}}",
+        "lat" : "lat {{lat}}",
+        "lon" : "lon {{lon}}"
    }
 
 }
