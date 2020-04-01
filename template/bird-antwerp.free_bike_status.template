@@ -7,8 +7,8 @@
     },
      { "is_disabled": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
        "is_reserved" : "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
-       "lat" : "https://dublincore.org/specifications/dublin-core/dcmi-terms/#spatial",
-       "lon" :  "https://dublincore.org/specifications/dublin-core/dcmi-terms/#spatial",
+       "lat" : "http://purl.org/dc/terms/spatial",
+       "lon" :  "http://purl.org/dc/terms/spatial",
      }
      
    ],
