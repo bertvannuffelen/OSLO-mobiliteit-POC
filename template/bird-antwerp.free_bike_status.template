@@ -7,8 +7,8 @@
     },
      { "is_disabled": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
        "is_reserved" : "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
-       "lat" : "http://purl.org/dc/terms/spatial",
-       "lon" :  "http://purl.org/dc/terms/spatial",
+       "ruimtelijkedekking" : "http://purl.org/dc/terms/spatial",
+       "ruimtelijkedekking" :  "http://purl.org/dc/terms/spatial",
      }
      
    ],
@@ -21,8 +21,8 @@
    "Vervoermiddel.fiets":  {
 	"is_reserved" : "{{is_reserved}}",
 	"is_disabled" :  "{{is_disabled}}",
-        "lat" : "lat {{lat}}",
-        "lon" : "lon {{lon}}"
+        "ruimtelijkedekking" : "lat {{lat}}",
+        "ruimtelijkedekking" : "lon {{lon}}"
    }
 
 }
