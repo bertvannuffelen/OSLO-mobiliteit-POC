@@ -1,33 +1,29 @@
 {
   "@context": [
-     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/20200112/context/mobiliteit-trips-en-aanbod-ap.jsonld",
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/2020-04-09/context/mobiliteit-trips-en-aanbod-ap.jsonld",
      "https://test.data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/zonderstatus/2018-10-04/context/generiek-basis.jsonld",
      {
-       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
-    },
-     { "is_installed": "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_installed",
+       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource",
+       "is_installed": "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_installed",
        "is_renting" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_renting",
        "is_returning" : "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#is_returning",
        "last_reported" :  "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#last_reported",
        "num_bikes_available" :  "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#num_bikes_available",
        "num_docks_available" :  "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#num_docks_available"
-
      }
-     
    ],
 
   "@type": "Transportknoop",
   "@id": "https://gbfs.provider/id/station/{{station_id}}",
   "identificator": {
-    "Identificator.identificator" : "{{station_id}}"
+       "Identificator.identificator" : "{{station_id}}"
   }, 
-   "beschikbaarheid":  {
-	"is_installed" :  "{{is_installed}}",
+  "beschikbaarheid":  {
+        "is_installed" :  "{{is_installed}}",
 	"is_renting" : "{{is_renting}}",
         "is_returning" : "{{is_returning}}",
         "num_bikes_available" : "{{num_bikes_available}}",
         "num_docks_available" : "{{num_docks_available}}",
         "last_reported" : "{{last_reported}}"
    }
-
 }

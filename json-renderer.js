@@ -126,12 +126,14 @@ function render_template_single(parsed_template, data){
 }
 
 function write_data(stream, data){
-        stream.write("[");
-	for (i in data) {
-	  stream.write(data[i]);
-          stream.write(",")
-	}
-        stream.write("]");
-	return true;
+    stream.write("[");
+    l=data.length-1
+    for (i in data) {
+	stream.write(data[i]);
+	// avoid trailing , in output
+        if (i < l) stream.write(",");
+    }
+    stream.write("]");
+    return true;
 };
 

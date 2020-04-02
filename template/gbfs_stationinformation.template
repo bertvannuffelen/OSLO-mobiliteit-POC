@@ -1,28 +1,25 @@
 {
   "@context": [
-     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/20200112/context/mobiliteit-trips-en-aanbod-ap.jsonld",
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/2020-04-09/context/mobiliteit-trips-en-aanbod-ap.jsonld",
      "https://test.data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/zonderstatus/2018-10-04/context/generiek-basis.jsonld",
      {
        "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource"
-    },
+     },
      { "capacity": "https://gbfs.com/capacity",
        "adress" : "https://gbfs.com/address"
      }
-     
    ],
 
-
-  "@type": "Transportknoop",
-  "@id": "https://gbfs.provider/id/station/{{station_id}}",
-  "geometrie": {
+   "@type": "Transportknoop",
+   "@id": "https://gbfs.provider/id/station/{{station_id}}",
+   "geometrie": {
       "@type" : "Punt",
       "wkt": "POINT({{lat}} {{lon}})",
       "gml": "<gml:Point srsName=\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\"> <gml:pos>{{lon}} {{lat}}</gml:pos></gml:Point>"
-	  },
-  "identificator": {
-    "Identificator.identificator" : "{{station_id}}"
-  }, 
-   "type": ""
-   "capacity" : "{{capacity}}",
-
+    },
+    "identificator": {
+       "Identificator.identificator" : "{{station_id}}"
+    }, 
+    "type": "",
+    "capacity" : "{{capacity}}"
 }

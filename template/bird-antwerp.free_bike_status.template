@@ -1,28 +1,28 @@
 {
   "@context": [
-     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/20200112/context/mobiliteit-trips-en-aanbod-ap.jsonld",
+     "https://test.data.vlaanderen.be/doc/applicatieprofiel/mobiliteit-trips-en-aanbod/kandidaatstandaard/2020-04-09/context/mobiliteit-trips-en-aanbod-ap.jsonld",
      "https://test.data.vlaanderen.be/doc/applicatieprofiel/generiek-basis/zonderstatus/2018-10-04/context/generiek-basis.jsonld",
      {
-       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.vervoermiddel"
-    },
-     { "is_disabled": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
-       "is_reserved" : "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
-       "ruimtelijkedekking" : "http://purl.org/dc/terms/spatial",
-       "ruimtelijkedekking" :  "http://purl.org/dc/terms/spatial",
+       "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.vervoermiddel",
+       "Resource.status": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
+       "Resource.type": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.type",       
+       "Resource.ruimtelijkedekking" :  "http://purl.org/dc/terms/spatial"
      }
-     
    ],
 
   "@type": "Resource",
   "@id": "https://gbfs.provider/id/resource/{{bike_id}}",
   "identificator": {
     "Identificator.identificator" : "{{bike_id}}"
-  }, 
-   "Vervoermiddel.fiets":  {
-	"is_reserved" : "{{is_reserved}}",
-	"is_disabled" :  "{{is_disabled}}",
-        "ruimtelijkedekking" : "lat {{lat}}",
-        "ruimtelijkedekking" : "lon {{lon}}"
+   }, 
+   "Resource":  {
+        "Resource.type" : "Vervoermiddel.fiets",
+	"Resource.status" : "{{is_reserved}}",
+	"Resource.status" :  "{{is_disabled}}",
+	"Resource.ruimtelijkedekking": {
+	      "@type" : "Punt",
+              "wkt": "POINT({{lat}} {{lon}})",
+  	      "gml": "<gml:Point srsName=\"http://www.opengis.net/def/crs/OGC/1.3/CRS84\"> <gml:pos>{{lon}} {{lat}}</gml:pos></gml:Point>"
+	}
    }
-
 }
