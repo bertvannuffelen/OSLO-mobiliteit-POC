@@ -2,15 +2,13 @@ SHELL=/bin/bash
 OUTPUT=output
 INPUT=example-input
 TEMPLATE=template
+
 JSONLDFILES=${OUTPUT}/station_status.jsonld \
             ${OUTPUT}/station_information.jsonld \
             ${OUTPUT}/bird-antwerp.free_bike_status.jsonld \
             ${OUTPUT}/bird-antwerp.station_information.jsonld
 
-TTLFILES=${OUTPUT}/station_status.ttl \
-            ${OUTPUT}/station_information.ttl \
-            ${OUTPUT}/bird-antwerp.free_bike_status.ttl \
-            ${OUTPUT}/bird-antwerp.station_information.ttl
+TTLFILES=$(JSONLDFILES:.jsonld=.ttl)
 
 build:
 	docker images mob --format "{{.ID}}" > rm.old

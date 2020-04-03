@@ -5,6 +5,9 @@
      {
        "Resource": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.vervoermiddel",
        "Resource.status": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.status",
+       "Vehicle.Event": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Vehicle.Event",
+       "Vehicle.reserved": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Vehicle.reserved",
+       "Vehicle.disabled": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Vehicle.disabled",       
        "Resource.type": "https://data.vlaanderen.be/ns/mobiliteit/trips-en-aanbod#Resource.type",       
        "Resource.ruimtelijkedekking" :  "http://purl.org/dc/terms/spatial"
      }
@@ -17,8 +20,12 @@
    }, 
    "Resource":  {
         "Resource.type" : "Vervoermiddel.fiets",
-	"Resource.status" : "{{is_reserved}}",
-	"Resource.status" :  "{{is_disabled}}",
+	"Resource.status" : {
+	   "Vehicle.Event" : {
+	      "@type" : "Vehicle.Event",
+	      "Vehicle.reserved" : "{{is_reserved}}",
+	      "Vehicle.disabled" : "{{is_disabled}}"
+	   } },
 	"Resource.ruimtelijkedekking": {
 	      "@type" : "Punt",
               "wkt": "POINT({{lat}} {{lon}})",
