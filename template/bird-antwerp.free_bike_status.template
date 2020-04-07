@@ -21,11 +21,10 @@
    "Resource":  {
         "Resource.type" : "Vervoermiddel.fiets",
 	"Resource.status" : {
-	   "Vehicle.Event" : {
-	      "@type" : "Vehicle.Event",
-	      "Vehicle.reserve" : "{{is_reserved}}",
-	      "Vehicle.disabled" : "{{is_disabled}}"
-	   } },
+	    "@type" : "Vehicle.Event",
+	    "Vehicle.reserve" : "{{is_reserved}}",
+	    "Vehicle.disabled" : "{{is_disabled}}"
+	 },
 	"Resource.ruimtelijkedekking": {
 	      "@type" : "Punt",
               "wkt": "POINT({{lat}} {{lon}})",
