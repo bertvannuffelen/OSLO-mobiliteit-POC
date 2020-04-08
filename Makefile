@@ -24,18 +24,18 @@ test: getfeeds output json-renderer.js ${TTLFILES}
 	jsonld format -q $< > $@
 
 ${OUTPUT}/station_information.jsonld: ${INPUT}/station_information.json json-renderer.js ${TEMPLATE}/gbfs_stationinformation.template
-	node json-renderer.js -t ${TEMPLATE}/gbfs_stationinformation.template -i $< --list 'data.stations[*]' -o $@
+	node /app/json-renderer.js -t ${TEMPLATE}/gbfs_stationinformation.template -i $< --list 'data.stations[*]' -o $@
 
 ${OUTPUT}/station_status.jsonld: ${INPUT}/station_status.json json-renderer.js ${TEMPLATE}/gbfs_stationstatus.template
-	node json-renderer.js -t ${TEMPLATE}/gbfs_stationstatus.template -i $< --list 'data.stations[*]' -o $@
+	node /app/json-renderer.js -t ${TEMPLATE}/gbfs_stationstatus.template -i $< --list 'data.stations[*]' -o $@
 
 # stupid template at present
 ${OUTPUT}/bird-antwerp.free_bike_status.jsonld: ${INPUT}/bird-antwerp.free_bike_status.json json-renderer.js ${TEMPLATE}/bird-antwerp.free_bike_status.template
-	node json-renderer.js -t ${TEMPLATE}/bird-antwerp.free_bike_status.template -i $< --list 'data.bikes[*]' -o $@
+	node /app/json-renderer.js -t ${TEMPLATE}/bird-antwerp.free_bike_status.template -i $< --list 'data.bikes[*]' -o $@
 
 # data file is currently empty (reusing gbfs template)
 ${OUTPUT}/bird-antwerp.station_information.jsonld: ${INPUT}/bird-antwerp.station_information.json json-renderer.js ${TEMPLATE}/gbfs_stationinformation.template
-	node json-renderer.js -t ${TEMPLATE}/gbfs_stationinformation.template -i $< --list 'data.stations[*]' -o $@
+	node /app/json-renderer.js -t ${TEMPLATE}/gbfs_stationinformation.template -i $< --list 'data.stations[*]' -o $@
 
 # Recover feeds
 
